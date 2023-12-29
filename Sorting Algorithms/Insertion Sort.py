@@ -1,6 +1,6 @@
 lst = [1, 4, 9, 10, -2, 3, 3, 0]
 
-def bubble_sort(lst):
+def insertion_sort(lst):
     sz = len(lst)
 
     for idx1 in range(1, sz):
@@ -14,7 +14,7 @@ def bubble_sort(lst):
 
     return lst
 
-print(f"Before: {lst}\nAfter: {bubble_sort(lst)}")
+print(f"Before: {lst}\nAfter: {insertion_sort(lst)}")
 ##################################################
 # Time Complexity:
 #   Worst Case: O(n^2)
