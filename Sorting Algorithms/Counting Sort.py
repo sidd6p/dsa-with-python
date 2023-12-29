@@ -1,19 +1,38 @@
 lst = [1, 4, 9, 10, 2, 3, 3, 0]
 
-def counting_sort(lst):
-    max_element = max(lst)
-    counting_lst, sorted_lst =  [0] * (max_element + 1), list() 
 
+def counting_sort(lst):
+    """
+    Counting sort is an efficient sorting algorithm that operates by counting the number of occurrences of each unique element in the input list. Then, it calculates the position of each element in the sorted array.
+
+    Steps:
+    1. Find the maximum element in the input list to determine the range of values.
+    2. Initialize a counting list (array) with a length of max_element + 1, all set to 0.
+    3. Count each element in the input list and increment the corresponding index in the counting list.
+    4. Construct the sorted list by appending each element according to its count in the counting list.
+
+    Note:
+    - This implementation assumes that the input list contains only non-negative integers.
+    """
+
+    # Find the maximum element to determine the size of the counting array
+    max_element = max(lst)
+
+    # Initialize a counting array to store the frequency of each element
+    # and an empty list for the sorted elements
+    counting_lst, sorted_lst = [0] * (max_element + 1), list()
+
+    # Count the occurrences of each element in the input list
     for element in lst:
         counting_lst[element] += 1
 
+    # Construct the sorted list using the counts from the counting array
     for idx, count in enumerate(counting_lst):
+        # Extend the sorted list with 'count' number of occurrences of 'idx'
         sorted_lst.extend([idx] * count)
-        
-    # for idx in range(len(counting_lst) - 1, -1, -1):
-    #     sorted_lst.extend([idx] * counting_lst[idx])
 
     return sorted_lst
+
 
 print(f"Before: {lst}\nAfter: {counting_sort(lst)}")
 ##################################################

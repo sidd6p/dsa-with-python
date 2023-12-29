@@ -1,20 +1,33 @@
 lst = [1, 4, 9, 10, -2, 3, 3, 0]
 
-def quick_sort(lst):
-    sz = len(lst)
 
-    if sz <= 1: return lst
+def quick_sort(lst):
+    """
+    Quick Sort is a divide-and-conquer algorithm. It works by selecting a 'pivot' element
+    from the array and partitioning the other elements into two sub-arrays, according to whether
+    they are less than or greater than the pivot. The sub-arrays are then sorted recursively.
+
+    """
+
+    # Base case: lists with 0 or 1 elements are already sorted
+    sz = len(lst)
+    if sz <= 1:
+        return lst
     else:
+        # Selecting the pivot element from the middle of the list
         pivot = lst.pop(sz // 2)
         smallers, greaters = list(), list()
 
+        # Dividing elements into those smaller than the pivot and those greater
         for element in lst:
             if element > pivot:
                 greaters.append(element)
             else:
                 smallers.append(element)
 
-    return quick_sort(smallers) + [pivot] + quick_sort(greaters)
+        # Recursively applying quick_sort on the smaller elements, the pivot, and the greater elements
+        return quick_sort(smallers) + [pivot] + quick_sort(greaters)
+
 
 print(f"Before: {lst}\nAfter: {quick_sort(lst)}")
 ##################################################
