@@ -41,9 +41,9 @@ def bubble_sort(lst):
 print(f"Before: {lst}\nAfter: {bubble_sort(lst)}")
 ##################################################
 # Time Complexity:
-#   Worst Case: O(n^2) Occurs when the array is reverse sorted. Both the outer and inner loop run the maximum number of times.
+#   Worst Case: O(n^2), the list is in reverse order
 #   Average Case: O(n^2)
-#   Best Case: O(n), Occurs when the array is already sorted. The outer loop runs '1' times but the inner loop runs 'n - 1' time and does not perform any swap, leading to an early break.
+#   Best Case: O(n), the list is already sorted
 
 # Space Complexity:
 #   Worst Case: O(1) becuase it is in-place sorting
