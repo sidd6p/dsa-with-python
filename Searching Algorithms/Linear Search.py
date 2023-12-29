@@ -9,10 +9,10 @@ def linear_search(lst, element):
     return None
 
 
-print(f"Before: {lst}\nAfter: {linear_search(lst, 10)}")
+print(f"{linear_search(lst, 10)}")
 ##################################################
 # Time Complexity:
-#   Worst Case: O(n),
+#   Worst Case: O(n)
 #   Average Case: O(n)
 #   Best Case: O(1)
 
