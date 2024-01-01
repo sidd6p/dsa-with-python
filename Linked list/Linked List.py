@@ -48,6 +48,17 @@ class LinkedList:
         new_node.next = self.head
         self.head = new_node
 
+
+    def count_elements(self):
+        if self.is_empty():
+            return 0
+        count = 1
+        current = self.head
+        while current.next is not self.head:
+            count += 1
+            current = current.next
+        return count
+    
     def insert_node(self, data, position = 1):
  
         # handle invalid positions
@@ -86,9 +97,11 @@ class LinkedList:
             if current.next is None:
                 return
     
-            current = current.next        
+            current = current.next      
+            temp = current.next  
     
         current.next = current.next.next
+        del temp
 
     def reverse_linked_list(self):
         prev_node = None
