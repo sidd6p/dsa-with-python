@@ -1,10 +1,9 @@
 class DoubleHashing:
-
     def __init__(self, size):
         self.table = [None] * size
-    
+
     def H1(self, data):
-        return data % len(self.table)   
+        return data % len(self.table)
 
     def H2(self, data):
         return 1 + data % (len(self.table) - 1)
@@ -19,9 +18,9 @@ class DoubleHashing:
         while self.table[idx] is not None:
             i += 1
             idx = self.H(data, i)
-        
+
         self.table[idx] = data
-    
+
     def retrieve(self, data):
         i = 0
         idx = self.H(data, i)
@@ -32,5 +31,5 @@ class DoubleHashing:
             else:
                 i += 1
                 idx = self.H(data, i)
-        
+
         return None

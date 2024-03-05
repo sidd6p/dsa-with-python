@@ -3,7 +3,8 @@ class Node:
         self.data = data
         self.next = None
         self.prev = None
-    
+
+
 class DoublyLinkedList:
     def __init__(self):
         self.head = None
@@ -43,12 +44,11 @@ class DoublyLinkedList:
         """
         current = self.tail
 
-        print("None", end = " <-> ")
+        print("None", end=" <-> ")
         while current is not None:
-            print(f"{current.data} <-> ", end="") 
+            print(f"{current.data} <-> ", end="")
             current = current.prev
         print("None")
-
 
     def node_count(self):
         count = 0
@@ -88,21 +88,20 @@ class DoublyLinkedList:
             self.head.prev = new_node
             self.head = new_node
 
-
     def insert_at_position(self, data, position):
         """
         Time: O(n)
         Space: O(1)
         """
-        if position <= 0  or position > self.node_count():
+        if position <= 0 or position > self.node_count():
             print("Invalid position")
-            return          
+            return
         elif position == 1:
             self.insert_at_beginning(data)
             return
         elif position == self.node_count():
             self.append(data)
-            return 
+            return
         else:
             new_node = Node(data)
             current = self.head
@@ -116,20 +115,20 @@ class DoublyLinkedList:
             new_node.next = next_node
 
             return
-        
+
     def delete_from_beginning(self):
         """
         Time: O(1)
         Space: O(1)
         """
         if self.node_count() == 0:
-            print('Cannot delete from Empty')
+            print("Cannot delete from Empty")
         elif self.node_count() == 1:
             temp = self.head
             self.head = None
             self.tail = None
             del temp
-        else: 
+        else:
             current = self.head
             self.head = self.head.next
             self.head.prev = None
@@ -141,7 +140,7 @@ class DoublyLinkedList:
         Space: O(1)
         """
         if self.node_count() == 0:
-            print('Cannot delete from Empty')
+            print("Cannot delete from Empty")
         elif self.node_count() == 1:
             temp = self.head
             self.head = None
@@ -151,15 +150,15 @@ class DoublyLinkedList:
             cur = self.tail
             self.tail = self.tail.prev
             self.tail.next = None
-            del cur            
+            del cur
 
     def delete_from_position(self, position):
-        """"
+        """ "
         Time: O(n)
         Space: O(1)
         """
         if self.node_count() == 0:
-            print('Cannot delete from Empty')
+            print("Cannot delete from Empty")
         elif position <= 0 or position > self.node_count():
             print("Invalid position")
         elif position == 1:
@@ -192,6 +191,7 @@ class DoublyLinkedList:
                     break
             self.head, self.tail = self.tail, self.head
             return
-        
+
+
 linked_list = DoublyLinkedList()
 linked_list.create_linked_list()

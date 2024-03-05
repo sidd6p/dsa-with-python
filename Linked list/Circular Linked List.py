@@ -3,12 +3,13 @@ class Node:
         self.data = data
         self.next = None
 
+
 class CircularLinkedList:
     def __init__(self):
         self.head = None
-    
+
     def create_linked_list(self):
-        """ Time Complexity: O(1), Space Complexity: O(1) """
+        """Time Complexity: O(1), Space Complexity: O(1)"""
         node1 = Node(80)
         self.head = node1
         node2 = Node(9)
@@ -18,13 +19,13 @@ class CircularLinkedList:
         node3.next = self.head
 
     def is_empty(self):
-        """ Time Complexity: O(1), Space Complexity: O(1) """
+        """Time Complexity: O(1), Space Complexity: O(1)"""
         return self.head is None
 
     def traverse_list(self):
-        """ Time Complexity: O(n), Space Complexity: O(1) """
+        """Time Complexity: O(n), Space Complexity: O(1)"""
         if self.is_empty():
-            print('Empty Linked List')
+            print("Empty Linked List")
             return
         current = self.head
         while current.next is not self.head:
@@ -33,7 +34,7 @@ class CircularLinkedList:
         print(f"{current.data} -> {self.head.data}")
 
     def append(self, data):
-        """ Time Complexity: O(n), Space Complexity: O(1) """
+        """Time Complexity: O(n), Space Complexity: O(1)"""
         new_node = Node(data)
         if self.is_empty():
             self.head = new_node
@@ -46,7 +47,7 @@ class CircularLinkedList:
             new_node.next = self.head
 
     def node_count(self):
-        """ Time Complexity: O(n), Space Complexity: O(1) """
+        """Time Complexity: O(n), Space Complexity: O(1)"""
         if self.is_empty():
             return 0
         count = 1
@@ -55,9 +56,9 @@ class CircularLinkedList:
             count += 1
             current = current.next
         return count
-    
+
     def insert_at_beginning(self, data):
-        """ Time Complexity: O(n), Space Complexity: O(1) """
+        """Time Complexity: O(n), Space Complexity: O(1)"""
         new_node = Node(data)
         if self.is_empty():
             self.head = new_node
@@ -69,9 +70,9 @@ class CircularLinkedList:
             current.next = new_node
             new_node.next = self.head
             self.head = new_node
-    
+
     def insert_at_position(self, data, position):
-        """ Time Complexity: O(n), Space Complexity: O(1) """
+        """Time Complexity: O(n), Space Complexity: O(1)"""
         if position <= 0 or position > self.node_count() + 1:
             print("Invalid Position")
         elif position == 1:
@@ -85,9 +86,9 @@ class CircularLinkedList:
             current.next = new_node
 
     def delete_from_beginning(self):
-        """ Time Complexity: O(n), Space Complexity: O(1) """
+        """Time Complexity: O(n), Space Complexity: O(1)"""
         if self.is_empty():
-            print('Cannot delete from Empty List')
+            print("Cannot delete from Empty List")
         elif self.node_count() == 1:
             temp = self.head
             self.head = None
@@ -100,6 +101,7 @@ class CircularLinkedList:
             self.head = self.head.next
             current.next = self.head
             del temp
+
 
 linked_list = CircularLinkedList()
 linked_list.create_linked_list()

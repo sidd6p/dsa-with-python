@@ -7,5 +7,5 @@ def brute_force(text, pattern):
                 break
             if j == len(pattern) - 1:
                 sols.append((i, i + j))
-    
+
     return sols

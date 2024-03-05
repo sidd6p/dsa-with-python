@@ -2,22 +2,23 @@ class Node:
     def __init__(self, data):
         self.data = data
         self.next = None
- 
+
+
 class LinkedList:
     def __init__(self):
         self.head = None
 
     def create_linked_list(self):
-        """ Time Complexity: O(1), Space Complexity: O(1) """
+        """Time Complexity: O(1), Space Complexity: O(1)"""
         node1 = Node(80)
         self.head = node1
         node2 = Node(9)
         node1.next = node2
         node3 = Node(14)
         node2.next = node3
-    
+
     def traverse_linked_list(self):
-        """ Time Complexity: O(n), Space Complexity: O(1) """
+        """Time Complexity: O(n), Space Complexity: O(1)"""
         current = self.head
         while current:
             print(f"{current.data}", end="->")
@@ -25,7 +26,7 @@ class LinkedList:
         print(None)
 
     def append(self, data):
-        """ Time Complexity: O(n), Space Complexity: O(1) """
+        """Time Complexity: O(n), Space Complexity: O(1)"""
         new_node = Node(data)
         if self.head is None:
             self.head = new_node
@@ -36,13 +37,13 @@ class LinkedList:
         current.next = new_node
 
     def insert_node_at_beginning(self, data):
-        """ Time Complexity: O(1), Space Complexity: O(1) """
+        """Time Complexity: O(1), Space Complexity: O(1)"""
         new_node = Node(data)
         new_node.next = self.head
         self.head = new_node
 
     def count_elements(self):
-        """ Time Complexity: O(n), Space Complexity: O(1) """
+        """Time Complexity: O(n), Space Complexity: O(1)"""
         if self.head is None:
             return 0
         count = 1
@@ -51,9 +52,9 @@ class LinkedList:
             count += 1
             current = current.next
         return count
-    
-    def insert_node_at_position(self, data, position = 1):
-        """ Time Complexity: O(n), Space Complexity: O(1) """
+
+    def insert_node_at_position(self, data, position=1):
+        """Time Complexity: O(n), Space Complexity: O(1)"""
         # handle invalid positions
         if position < 1 or position > self.count_elements() + 1:
             print("Position Invalid")
@@ -70,7 +71,7 @@ class LinkedList:
         current.next = new_node
 
     def delete_node(self, position):
-        """ Time Complexity: O(n), Space Complexity: O(1) """
+        """Time Complexity: O(n), Space Complexity: O(1)"""
         if self.head is None:
             return
         if position == 1:
@@ -86,7 +87,7 @@ class LinkedList:
         del temp
 
     def reverse_linked_list(self):
-        """ Time Complexity: O(n), Space Complexity: O(1) """
+        """Time Complexity: O(n), Space Complexity: O(1)"""
         prev_node = None
         current = self.head
         while current is not None:
@@ -97,7 +98,7 @@ class LinkedList:
         self.head = prev_node
 
     def concatenate(self, list2):
-        """ Time Complexity: O(n), Space Complexity: O(1) """
+        """Time Complexity: O(n), Space Complexity: O(1)"""
         if self.head is None:
             self.head = list2.head
             return

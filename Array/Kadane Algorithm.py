@@ -1,6 +1,6 @@
 def get_max_sum_subarray(nums):
-    max_sum, cur_sum = 0, float('-inf')
-    start, end = 0, 0
+    max_sum, cur_sum = 0, float("-inf")
+    start, end = 0, len(nums) - 1
 
     for idx in range(len(nums)):
         cur_sum += nums[idx]
@@ -10,7 +10,5 @@ def get_max_sum_subarray(nums):
         if cur_sum <= 0:
             start = idx + 1
             cur_sum = 0
-    
+
     return max_sum, start, end
-
-

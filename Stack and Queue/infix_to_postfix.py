@@ -1,8 +1,9 @@
-operators = set(['+', '*'])
-precedence = {'+': 1, '*': 2}
+operators = set(["+", "*"])
+precedence = {"+": 1, "*": 2}
+
 
 def infix_to_postfix(infix):
-    postfix = ''
+    postfix = ""
     stack = []
 
     for character in infix:
@@ -12,13 +13,14 @@ def infix_to_postfix(infix):
             while stack and precedence[character] <= precedence[stack[-1]]:
                 postfix += stack.pop()
             stack.append(character)
-    
+
     while stack:
         postfix += stack.pop()
 
     return postfix
 
-infix = 'a*b+c'
- 
-print(f'infix notation: {infix}')
-print(f'postfix notation: {infix_to_postfix(infix)}')
+
+infix = "a*b+c"
+
+print(f"infix notation: {infix}")
+print(f"postfix notation: {infix_to_postfix(infix)}")
