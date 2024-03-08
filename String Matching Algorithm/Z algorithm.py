@@ -1,18 +1,19 @@
-def calculate_z(string):
+def calculate_z(s):
     left, right, idx = 0, 0, 1
-    z = [0] * len(string)
+    z = [0] * len(s)
+    z[0] = len(s)
 
-    while idx < len(z):
+    while idx < len(s):
         if idx > right:
             left, right = idx, idx
-            while right < len(z) and string[right] == string[right - left]:
+            while right < len(s) and s[right] == s[right - left]:
                 right += 1
             z[idx] = right - left
             right -= 1
         else:
             if z[idx - left] >= right - idx + 1:
                 left = idx
-                while right < len(string) and string[right] == string[right - left]:
+                while right < len(s) and s[right] == s[right - left]:
                     right += 1
                 z[idx] = right - left
                 right -= 1
