@@ -6,7 +6,7 @@ class DoubleHashing:
         return data % len(self.table)
 
     def H2(self, data):
-        return 1 + data % (len(self.table) - 1)
+        return 1 + (data % (len(self.table) - 1))
 
     def H(self, data, i):
         return self.H1(data) + (i * self.H2(data))
