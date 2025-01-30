@@ -1,4 +1,4 @@
-graph_adj_list =  {
+graph_adj_list = {
     "A": ["B", "E", "D"],
     "B": ["A", "E", "C"],
     "C": ["B", "F"],
@@ -7,8 +7,9 @@ graph_adj_list =  {
     "F": ["C"],
     "G": ["D", "H"],
     "H": ["E", "G", "I"],
-    "I": ["H"]
+    "I": ["H"],
 }
+
 
 def dfs_traversal(adj_list, root):
     path = list()
@@ -24,8 +25,9 @@ def dfs_traversal(adj_list, root):
             path.append(current_node)
             visited.add(current_node)
             stack.extend([new_node for new_node in adj_list[current_node]])
-    
+
     return path
+
 
 path = dfs_traversal(graph_adj_list, "A")
 print(path)
