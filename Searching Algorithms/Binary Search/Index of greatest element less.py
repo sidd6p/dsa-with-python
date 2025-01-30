@@ -8,7 +8,6 @@ def index_of_greatest_element_less(lst, element):
     while low <= high:
         mid = low + (high - low) // 2
         if element < lst[mid]:
-            sol = mid
             high = mid - 1
         elif element > lst[mid]:
             sol = mid
