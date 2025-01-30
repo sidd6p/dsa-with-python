@@ -5,7 +5,7 @@ def binary_search(lst, element):
     low, high = 0, len(lst) - 1
 
     while low <= high:
-        mid = (low + high) // 2
+        mid = low + (high - low) // 2
         if lst[mid] > element:
             high = mid - 1
         elif lst[mid] < element:
@@ -31,7 +31,5 @@ print(f"{binary_search(lst, 11111)}")
 
 
 # ##################################################
-# Binary search is used in scenarios where the data is already sorted (or can be sorted easily). This includes:
-#   Database search: Binary search can be used to quickly search through large databases to find specific records or elements.
-#   Search Engines: Binary search can be used to locate a word or phrase in a sorted list of indexed terms.
+# Binary search is used in scenarios where the data is already sorted (or can be sorted easily)
 ##################################################

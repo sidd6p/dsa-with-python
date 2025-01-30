@@ -1,28 +1,21 @@
-graph_adj_list =  {
-    "A": ["B", "E", "D"],
-    "B": ["A", "E", "C"],
-    "C": ["B", "F"],
-    "D": ["A", "G"],
-    "E": ["A", "B", "H"],
-    "F": ["C"],
-    "G": ["D", "H"],
-    "H": ["E", "G", "I"],
-    "I": ["H"]
-}
-
-def dfs_traversal(adj_list, root, path, visited=None):
+def dfs(graph, root, visited = None):
     if visited is None:
         visited = set()
+    visited.add(root)
+    print(root)
 
-    if root not in visited:
-        visited.add(root)
-        path.append(root)
-        
-        for node in adj_list[root]:
-            dfs_traversal(adj_list, node, path, visited)
+    for node in graph[root] - visited:
+        dfs(graph, node, visited)
 
-    return path
 
-path = list()
-dfs_traversal(graph_adj_list, "A", path)
-print(path)
+    return 
+
+
+graph = {'0': set(['1', '2']),
+         '1': set(['0', '3', '4']),
+         '2': set(['0']),
+         '3': set(['1']),
+         '4': set(['2', '3'])}
+
+
+dfs(graph, "0")

@@ -1,31 +1,28 @@
-graph_adj_list =  {
-    "A": ["B", "E", "D"],
-    "B": ["A", "E", "C"],
-    "C": ["B", "F"],
-    "D": ["A", "G"],
-    "E": ["A", "B", "H"],
-    "F": ["C"],
-    "G": ["D", "H"],
-    "H": ["E", "G", "I"],
-    "I": ["H"]
-}
+graph = {'0': set(['1', '2']),
+         '1': set(['0', '3', '4']),
+         '2': set(['0']),
+         '3': set(['1']),
+         '4': set(['2', '3'])}
 
-def bfs_traversal(adj_list, root):
-    path = list()
-    visited = set()
-    queue = list()
 
-    queue.append(root)
-
-    while queue:
-        current_node = queue.pop(0)
-
-        if current_node not in visited:
-            path.append(current_node)
-            visited.add(current_node)
-            queue.extend([new_node for new_node in adj_list[current_node]])
+def bfs(graph, root):
+    if not graph or root not in graph:
+        return
     
-    return path
+    visited, queue = set(), list()
 
-path = bfs_traversal(graph_adj_list, "A")
-print(path)
+    visited.add(root)
+    queue.append(root)
+    print(root)
+    
+    while queue:
+        cur_node = queue.pop(0)
+
+        for node in graph[cur_node] - visited:
+            queue.append(node)
+            visited.add(node)
+            print(node)
+    return
+
+
+bfs(graph, '0')
