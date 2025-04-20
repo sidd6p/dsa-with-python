@@ -20,6 +20,7 @@ def bubble_sort(arr):
                 arr[j], arr[j + 1] = arr[j + 1], arr[j]
     return arr  # Time Complexity: O(n^2) worst, O(n) best (already sorted)
 
+
 # Insertion Sort
 def insertion_sort(arr):
     """Sorts an array using Insertion Sort algorithm."""
@@ -31,6 +32,7 @@ def insertion_sort(arr):
             j -= 1
         arr[j + 1] = key
     return arr  # Time Complexity: O(n^2) worst, O(n) best (already sorted)
+
 
 # Selection Sort
 def selection_sort(arr):
@@ -44,6 +46,7 @@ def selection_sort(arr):
         arr[i], arr[min_idx] = arr[min_idx], arr[i]
     return arr  # Time Complexity: O(n^2) in all cases
 
+
 # Merge Sort
 def merge_sort(arr):
     """Sorts an array using Merge Sort algorithm."""
@@ -53,6 +56,7 @@ def merge_sort(arr):
         right_half = merge_sort(arr[mid:])
         return merge(left_half, right_half)
     return arr  # Time Complexity: O(n log n) in all cases
+
 
 def merge(left, right):
     """Merges two sorted halves."""
@@ -68,6 +72,7 @@ def merge(left, right):
     sorted_arr.extend(left[i:])
     sorted_arr.extend(right[j:])
     return sorted_arr
+
 
 # Quick Sort
 def quick_sort(arr):

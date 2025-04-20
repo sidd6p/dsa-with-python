@@ -24,6 +24,7 @@ def dfs_iterative(graph, start, target):
     return False
     # Time Complexity: O(V + E)
 
+
 # Depth-First Search (DFS) - Recursive
 def dfs_recursive(graph, node, target, visited=None):
     if visited is None:
@@ -40,6 +41,7 @@ def dfs_recursive(graph, node, target, visited=None):
     return False
     # Time Complexity: O(V + E)
 
+
 # Breadth-First Search (BFS) - Iterative
 def bfs_iterative(graph, start, target):
     queue = deque([start])
@@ -54,6 +56,7 @@ def bfs_iterative(graph, start, target):
             queue.extend(graph.get(node, []))
     return False
     # Time Complexity: O(V + E)
+
 
 # Breadth-First Search (BFS) - Recursive
 def bfs_recursive(graph, queue, target, visited=None):

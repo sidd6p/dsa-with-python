@@ -8,11 +8,13 @@ Standardized Tree Traversal Algorithms
 | Postorder (Recursive & Iterative) | O(1)      | O(N)         | O(N)       |
 """
 
+
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
         self.left = left
         self.right = right
+
 
 # Inorder Traversal - Recursive
 def inorder_recursive(root):
@@ -20,6 +22,7 @@ def inorder_recursive(root):
         inorder_recursive(root.left)
         print(root.val, end=" ")
         inorder_recursive(root.right)
+
 
 # Inorder Traversal - Iterative
 def inorder_iterative(root):
@@ -33,12 +36,14 @@ def inorder_iterative(root):
             print(current.val, end=" ")
             current = current.right
 
+
 # Preorder Traversal - Recursive
 def preorder_recursive(root):
     if root:
         print(root.val, end=" ")
         preorder_recursive(root.left)
         preorder_recursive(root.right)
+
 
 # Preorder Traversal - Iterative
 def preorder_iterative(root):
@@ -51,12 +56,14 @@ def preorder_iterative(root):
         if node.left:
             stack.append(node.left)
 
+
 # Postorder Traversal - Recursive
 def postorder_recursive(root):
     if root:
         postorder_recursive(root.left)
         postorder_recursive(root.right)
         print(root.val, end=" ")
+
 
 # Postorder Traversal - Iterative
 def postorder_iterative(root):
