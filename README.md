@@ -1,22 +1,24 @@
+
 # DSA with Python 🚀
 
-A collection of **Data Structures and Algorithms (DSA) implementations** in Python 🐍. This repository is designed to help developers and students understand and practice fundamental DSA concepts using Python.
+A comprehensive collection of **Data Structures and Algorithms (DSA) implementations** in Python 🐍. This repository is designed for developers and students to learn, practice, and enhance their understanding of fundamental DSA concepts through Python.
 
 ## 📌 Features
-- ✅ Implementations of common data structures (Arrays, Linked Lists, Stacks, Queues, Trees, Graphs, etc.)
+- ✅ Implementations of common data structures (Arrays, Linked Lists, Stacks, Queues, Hash Tables, etc.)
 - ✅ Solutions to popular algorithmic problems
 - ✅ Optimized and well-documented Python code
-- ✅ Beginner-friendly explanations
+- ✅ Beginner-friendly explanations and step-by-step solutions
 
 ## 📂 Repository Structure
 ```
 📦 dsa-with-python
+ ┣ 📜 Binary Search and Its Variants.py
+ ┣ 📜 DFS and BFS.py
+ ┣ 📜 Inorder Preorder and Postorder.py
+ ┣ 📜 README.md
+ ┣ 📜 Sorting Algorithms.py
  ┣ 📂 Array
  ┃ ┗ 📜 Kadane Algorithm.py
- ┣ 📂 Graph
- ┃ ┣ 📜 bfs_loop.py
- ┃ ┣ 📜 dfs_loop.py
- ┃ ┗ 📜 dfs_recursion.py
  ┣ 📂 Hashing
  ┃ ┣ 📜 Double Hashing.py
  ┃ ┣ 📜 Linear Probing Hash Table.py
@@ -27,22 +29,6 @@ A collection of **Data Structures and Algorithms (DSA) implementations** in Pyth
  ┃ ┣ 📜 Circular Linked List.py
  ┃ ┣ 📜 Doubly Linked List.py
  ┃ ┗ 📜 Linked List.py
- ┣ 📂 Searching Algorithms
- ┃ ┣ 📜 Linear Search.py
- ┃ ┗ 📂 Binary Search
- ┃   ┣ 📜 Index of first occurrence.py
- ┃   ┣ 📜 Index of greatest element less.py
- ┃   ┣ 📜 Index of last occurrence.py
- ┃   ┣ 📜 Index of least element greater.py
- ┃   ┣ 📜 Iterative.py
- ┃   ┗ 📜 Recusrion.py
- ┣ 📂 Sorting Algorithms
- ┃ ┣ 📜 Bubble Sort.py
- ┃ ┣ 📜 Counting Sort.py
- ┃ ┣ 📜 Insertion Sort.py
- ┃ ┣ 📜 Merge Sort.py
- ┃ ┣ 📜 Quick Sort.py
- ┃ ┗ 📜 Selection Sort.py
  ┣ 📂 Stack and Queue
  ┃ ┣ 📜 Circular_queue.py
  ┃ ┗ 📜 infix_to_postfix.py
@@ -51,9 +37,6 @@ A collection of **Data Structures and Algorithms (DSA) implementations** in Pyth
  ┃ ┣ 📜 Knuth Morris Prath.py
  ┃ ┣ 📜 Robin Karp Matching.py
  ┃ ┗ 📜 Z algorithm.py
- ┣ 📂 Tree Data Structure
- ┣ 📜 README.md
- ┗ 📜 requirements.txt
 ```
 
 ## 🛠 Installation & Usage
@@ -73,23 +56,25 @@ A collection of **Data Structures and Algorithms (DSA) implementations** in Pyth
 
 ## 📖 Topics Covered
 ### 🏗 Data Structures
-- Arrays
-- Linked Lists (Singly, Doubly, Circular)
-- Stacks & Queues
-- Trees (Binary Trees, Binary Search Trees, AVL Trees, etc.)
-- Graphs (BFS, DFS, Dijkstra's Algorithm)
-- Hashing Techniques
-
+- **Arrays**
+- **Linked Lists** (Singly, Doubly, Circular)
+- **Stacks & Queues**
+- **Hashing** Techniques
+- **Trees** (Inorder, Preorder, Postorder Traversals)
+  
 ### 🔍 Algorithms
-- Sorting (Bubble, Merge, Quick, Heap, Radix)
-- Searching (Binary Search, Linear Search)
-- Recursion & Backtracking
-- Dynamic Programming (Knapsack, Fibonacci, LIS, etc.)
-- Greedy Algorithms
-- String Matching Algorithms (KMP, Robin-Karp, Z Algorithm)
+- **Sorting Algorithms** (Bubble, Merge, Quick, Heap, Radix, etc.)
+- **Searching Algorithms** (Binary Search and its Variants)
+- **Graph Traversals** (DFS, BFS)
+- **String Matching Algorithms** (Brute Force, Knuth-Morris-Pratt, Robin-Karp, Z Algorithm)
+  
+### 📚 Additional Topics
+- **Tree Traversals** (Inorder, Preorder, Postorder)
+- **Dynamic Programming** (Knapsack, Fibonacci, LIS, etc.)
+- **Greedy Algorithms**
 
 ## 🚀 Contributing
-Contributions are welcome! If you’d like to improve an implementation or add new problems, feel free to:
+Contributions are highly welcome! If you’d like to enhance an implementation or add new problems, feel free to:
 1. Fork the repository
 2. Create a new branch
 3. Commit your changes
