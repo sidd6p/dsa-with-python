@@ -10,42 +10,34 @@ Sorting Algorithms and Time Complexities
 | Quick Sort     | O(n log n)   | O(n log n)   | O(n^2)      |
 """
 
-# Bubble Sort
-def bubble_sort(arr):
-    """Sorts an array using Bubble Sort algorithm."""
-    n = len(arr)
-    for i in range(n - 1):
-        for j in range(n - 1 - i):
-            if arr[j] > arr[j + 1]:
-                arr[j], arr[j + 1] = arr[j + 1], arr[j]
-    return arr  # Time Complexity: O(n^2) worst, O(n) best (already sorted)
+def bubble_sort(nums):
+    n = len(nums)
+    for i in range(n):
+        for j in range(n - i - 1):
+            if nums[j] > nums[j + 1]:
+                nums[j], nums[j + 1] = nums[j + 1], nums[j]
+    return nums
 
-
-# Insertion Sort
-def insertion_sort(arr):
-    """Sorts an array using Insertion Sort algorithm."""
-    for i in range(1, len(arr)):
-        key = arr[i]
+def insertion_sort(nums):
+    n = len(nums)
+    for i in range(1, n):
+        key = nums[i]
         j = i - 1
-        while j >= 0 and arr[j] > key:
-            arr[j + 1] = arr[j]
+        while j >= 0 and nums[j] > key:
+            nums[j + 1] = nums[j]
             j -= 1
-        arr[j + 1] = key
-    return arr  # Time Complexity: O(n^2) worst, O(n) best (already sorted)
+        nums[j + 1] = key
+    return nums
 
-
-# Selection Sort
-def selection_sort(arr):
-    """Sorts an array using Selection Sort algorithm."""
-    n = len(arr)
-    for i in range(n - 1):
+def selection_sort(nums):
+    n = len(nums)
+    for i in range(n):
         min_idx = i
         for j in range(i + 1, n):
-            if arr[j] < arr[min_idx]:
+            if nums[j] < nums[min_idx]:
                 min_idx = j
-        arr[i], arr[min_idx] = arr[min_idx], arr[i]
-    return arr  # Time Complexity: O(n^2) in all cases
-
+        nums[min_idx], nums[i] = nums[i], nums[min_idx]
+    return nums
 
 # Merge Sort
 def merge_sort(arr):
