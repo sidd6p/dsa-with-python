@@ -16,65 +16,67 @@ class TreeNode:
         self.right = right
 
 
-# Inorder Traversal - Recursive
-def inorder_recursive(root):
-    if root:
-        inorder_recursive(root.left)
-        print(root.val, end=" ")
-        inorder_recursive(root.right)
+def inorder_recursive(root: TreeNode):
+    if root is None:
+        return
+    inorder_recursive(root.left)
+    print(root.val)
+    inorder_recursive(root.right)
 
 
-# Inorder Traversal - Iterative
-def inorder_iterative(root):
+def postorder_recursive(root: TreeNode):
+    if root is None:
+        return
+    postorder_recursive(root.left)
+    postorder_recursive(root.right)
+    print(root.val)
+
+
+def preorder_recursive(root: TreeNode):
+    if root is None:
+        return
+    print(root.val)
+    preorder_recursive(root.left)
+    preorder_recursive(root.right)
+
+
+def inorder_iterative(root: TreeNode):
     stack, current = [], root
+
     while stack or current:
         if current:
             stack.append(current)
             current = current.left
         else:
             current = stack.pop()
-            print(current.val, end=" ")
+            print(current.val)
             current = current.right
 
 
-# Preorder Traversal - Recursive
-def preorder_recursive(root):
-    if root:
-        print(root.val, end=" ")
-        preorder_recursive(root.left)
-        preorder_recursive(root.right)
+def preorder_iterative(root: TreeNode):
+    stack = [root]
 
-
-# Preorder Traversal - Iterative
-def preorder_iterative(root):
-    stack = [root] if root else []
     while stack:
-        node = stack.pop()
-        print(node.val, end=" ")
-        if node.right:
-            stack.append(node.right)
-        if node.left:
-            stack.append(node.left)
+        current = stack.pop()
+        if current:
+            print(current.val)
+            if current.right:
+                stack.append(current.right)
+            if current.left:
+                stack.append(current.left)
 
 
-# Postorder Traversal - Recursive
-def postorder_recursive(root):
-    if root:
-        postorder_recursive(root.left)
-        postorder_recursive(root.right)
-        print(root.val, end=" ")
+def postorder_iterative(root: TreeNode):
+    stack = [root]
+    output = []
 
-
-# Postorder Traversal - Iterative
-def postorder_iterative(root):
-    if not root:
-        return
-    stack, output = [root], []
     while stack:
-        node = stack.pop()
-        output.append(node.val)
-        if node.left:
-            stack.append(node.left)
-        if node.right:
-            stack.append(node.right)
+        current = stack.pop()
+        if current:
+            output.append(current.val)
+            if current.left:
+                stack.append(current.left)
+            if current.right:
+                stack.append(current.right)
+
     print(" ".join(map(str, output[::-1])))
