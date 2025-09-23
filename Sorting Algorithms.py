@@ -81,5 +81,4 @@ def quick_sort(nums):
         right = [num for num in nums if num > mid]
         mid = [num for num in nums if num == mid]
         return quick_sort(left) + mid + quick_sort(right)
-    else:
-        return nums
+    return nums
