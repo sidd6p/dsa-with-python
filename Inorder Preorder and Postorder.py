@@ -72,9 +72,7 @@ def postorder_iterative(root: TreeNode):
         current = stack.pop()
         if current:
             output.append(current.val)
-            if current.left:
-                stack.append(current.left)
-            if current.right:
-                stack.append(current.right)
+            stack.append(current.left)
+            stack.append(current.right)
 
     print(" ".join(map(str, output[::-1])))
