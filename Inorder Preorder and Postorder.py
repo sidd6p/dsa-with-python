@@ -60,10 +60,8 @@ def preorder_iterative(root: TreeNode):
         current = stack.pop()
         if current:
             print(current.val)
-            if current.right:
-                stack.append(current.right)
-            if current.left:
-                stack.append(current.left)
+            stack.append(current.right)
+            stack.append(current.left)
 
 
 def postorder_iterative(root: TreeNode):
