@@ -10,23 +10,22 @@ DFS and BFS Search (Iterative & Recursive)
 from collections import deque
 
 # Depth-First Search (DFS) - Iterative
-def dfs_iterative(graph, start, target):
-    if start not in graph and start != target:
-        return False
-    if target not in graph and start != target:
-        return False
+def dfs_iterative(graph, start, end):
+    if start not in graph or end not in graph:
+        return False  
 
-    stack = [start]
-    visited = set()
+    stack, visited = [start], set()
 
     while stack:
-        node = stack.pop()
-        if node == target:
+        current = stack.pop()
+        if current == end:
             return True
-        if node not in visited:
-            visited.add(node)
-            stack.extend(graph.get(node, []))
+        if current not in visited:
+            visited.add(current)
+            stack.extend(graph.get(current, []))
+
     return False
+
     # Time Complexity: O(V + E)
 
 
