@@ -48,16 +48,20 @@ def dfs_recursive(graph, node, target, visited=None):
 
 # Breadth-First Search (BFS) - Iterative
 def bfs_iterative(graph, start, target):
+    if start not in graph or end not in graph:
+        return False 
+
     queue = deque([start])
     visited = set()
 
     while queue:
-        node = queue.popleft()
-        if node == target:
+        current = queue.popleft()
+        if current == end:
             return True
-        if node not in visited:
-            visited.add(node)
-            queue.extend(graph.get(node, []))
+        if current not in visited:
+            visited.add(current)
+            queue.extend(graph.get(current, []))
+
     return False
     # Time Complexity: O(V + E)
 
