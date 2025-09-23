@@ -11,6 +11,11 @@ from collections import deque
 
 # Depth-First Search (DFS) - Iterative
 def dfs_iterative(graph, start, target):
+    if start not in graph and start != target:
+        return False
+    if target not in graph and start != target:
+        return False
+
     stack = [start]
     visited = set()
 
