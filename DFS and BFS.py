@@ -30,16 +30,20 @@ def dfs_iterative(graph, start, end):
 
 
 # Depth-First Search (DFS) - Recursive
-def dfs_recursive(graph, node, target, visited=None):
-    if visited is None:
-        visited = set()
-    if node == target:
-        return True
-    if node in visited:
+def dfs_recursive(graph, start, target, visited=None):
+    if start not in graph or target not in graph:
         return False
 
-    visited.add(node)
-    for neighbor in graph.get(node, []):
+    if visited is None:
+        visited = set()
+
+    if start == target:
+        return True
+    if start in visited:
+        return False
+
+    visited.add(start)
+    for neighbor in graph.get(start, []):
         if dfs_recursive(graph, neighbor, target, visited):
             return True
     return False
