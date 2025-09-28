@@ -39,40 +39,6 @@ def preorder_recursive(root: TreeNode):
     preorder_recursive(root.left)
     preorder_recursive(root.right)
 
-
-def inorder_iterative(root: TreeNode):
-    stack, current = [], root
-
-    while stack or current:
-        if current:
-            stack.append(current)
-            current = current.left
-        else:
-            current = stack.pop()
-            print(current.val)
-            current = current.right
-
-
-def preorder_iterative(root: TreeNode):
-    stack = [root]
-
-    while stack:
-        current = stack.pop()
-        if current:
-            print(current.val)
-            stack.append(current.right)
-            stack.append(current.left)
-
-
-def postorder_iterative(root: TreeNode):
-    stack = [root]
-    output = []
-
-    while stack:
-        current = stack.pop()
-        if current:
-            output.append(current.val)
-            stack.append(current.left)
             stack.append(current.right)
 
     print(" ".join(map(str, output[::-1])))
