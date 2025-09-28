@@ -1,11 +1,11 @@
 """
 Standardized Tree Traversal Algorithms
 
-| Algorithm                     | Best Case | Average Case | Worst Case |
-|-------------------------------|-----------|--------------|------------|
-| Inorder (Recursive & Iterative)   | O(1)      | O(N)         | O(N)       |
-| Preorder (Recursive & Iterative)  | O(1)      | O(N)         | O(N)       |
-| Postorder (Recursive & Iterative) | O(1)      | O(N)         | O(N)       |
+| Algorithm | Best Case | Average Case | Worst Case |
+|-----------|-----------|--------------|------------|
+| Inorder   | O(1)      | O(N)         | O(N)       |
+| Preorder  | O(1)      | O(N)         | O(N)       |
+| Postorder | O(1)      | O(N)         | O(N)       |
 """
 
 
