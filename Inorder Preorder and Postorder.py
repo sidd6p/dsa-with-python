@@ -1,11 +1,17 @@
 """
-Standardized Tree Traversal Algorithms
-
+Time Complexity:
 | Algorithm | Best Case | Average Case | Worst Case |
 |-----------|-----------|--------------|------------|
 | Inorder   | O(1)      | O(N)         | O(N)       |
 | Preorder  | O(1)      | O(N)         | O(N)       |
 | Postorder | O(1)      | O(N)         | O(N)       |
+
+Space Complexity:
+| Algorithm | Best Case | Average Case | Worst Case |
+|-----------|-----------|--------------|------------|
+| Inorder   | O(1)      | O(log N)     | O(N)       |
+| Preorder  | O(1)      | O(log N)     | O(N)       |
+| Postorder | O(1)      | O(log N)     | O(N)       |
 """
 
 
@@ -16,29 +22,27 @@ class TreeNode:
         self.right = right
 
 
-def inorder_recursive(root: TreeNode):
+def inorder(root: TreeNode):
     if root is None:
         return
-    inorder_recursive(root.left)
+    inorder(root.left)
     print(root.val)
-    inorder_recursive(root.right)
+    inorder(root.right)
 
 
-def postorder_recursive(root: TreeNode):
+def postorder(root: TreeNode):
     if root is None:
         return
-    postorder_recursive(root.left)
-    postorder_recursive(root.right)
+    postorder(root.left)
+    postorder(root.right)
     print(root.val)
 
 
-def preorder_recursive(root: TreeNode):
+def preorder(root: TreeNode):
     if root is None:
         return
     print(root.val)
-    preorder_recursive(root.left)
-    preorder_recursive(root.right)
+    preorder(root.left)
+    preorder(root.right)
 
-            stack.append(current.right)
-
-    print(" ".join(map(str, output[::-1])))
+     
