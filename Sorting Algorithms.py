@@ -1,6 +1,7 @@
 """
-Sorting Algorithms and Time Complexities
+Sorting Algorithms
 
+Time Complexity:
 | Algorithm      | Best Case    | Average Case | Worst Case  |
 |----------------|--------------|--------------|-------------|
 | Bubble Sort    | O(n^2)       | O(n^2)       | O(n^2)      |
@@ -8,6 +9,15 @@ Sorting Algorithms and Time Complexities
 | Selection Sort | O(n^2)       | O(n^2)       | O(n^2)      |
 | Merge Sort     | O(n log n)   | O(n log n)   | O(n log n)  |
 | Quick Sort     | O(n log n)   | O(n log n)   | O(n^2)      |
+
+Space Complexity:
+| Algorithm      | Best Case    | Average Case | Worst Case  |
+|----------------|--------------|--------------|-------------|
+| Bubble Sort    | O(1)         | O(1)         | O(1)        |
+| Insertion Sort | O(1)         | O(1)         | O(1)        |
+| Selection Sort | O(1)         | O(1)         | O(1)        |
+| Merge Sort     | O(n)         | O(n)         | O(n)        |
+| Quick Sort     | O(n)         | O(n)         | O(n)        |
 """
 
 
