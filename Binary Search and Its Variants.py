@@ -1,11 +1,17 @@
 """
-Binary Search and Its Variants (Iterative & Recursive)
-
+Time Complexity:
 | Algorithm        | Best Case | Average Case | Worst Case |
 |------------------|-----------|--------------|------------|
 | Binary Search    | O(1)      | O(log n)     | O(log n)   |
 | First Occurrence | O(1)      | O(log n)     | O(log n)   |
 | Last Occurrence  | O(1)      | O(log n)     | O(log n)   |
+
+Space Complexity:
+| Algorithm        | Best Case | Average Case | Worst Case |
+|------------------|-----------|--------------|------------|
+| Binary Search    | O(1)      | O(1)         | O(1)       |
+| First Occurrence | O(1)      | O(1)         | O(1)       |
+| Last Occurrence  | O(1)      | O(1)         | O(1)       |
 """
 
 
