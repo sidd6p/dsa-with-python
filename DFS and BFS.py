@@ -1,10 +1,15 @@
 """
-DFS and BFS Search (Iterative & Recursive)
-
+Time Complexity:
 | Algorithm | Best Case | Average Case | Worst Case |
 |-----------|-----------|--------------|------------|
 | DFS       | O(1)      | O(V + E)     | O(V + E)   |
 | BFS       | O(1)      | O(V + E)     | O(V + E)   |
+
+Space Complexity:
+| Algorithm | Best Case | Average Case | Worst Case |
+|-----------|-----------|--------------|------------|
+| DFS       | O(V)      | O(V)         | O(V)       |
+| BFS       | O(V)      | O(V)         | O(V)       |
 """
 
 from collections import deque
@@ -27,7 +32,7 @@ def dfs(graph, start, end):
 
 
 
-def bfs(graph, start, target):
+def bfs(graph, start, end):
     if start not in graph or end not in graph:
         return False 
 
