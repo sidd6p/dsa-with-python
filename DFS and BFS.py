@@ -36,8 +36,7 @@ def bfs(graph, start, end):
     if start not in graph or end not in graph:
         return False 
 
-    queue = deque([start])
-    visited = set()
+    queue, visited = deque([start]), set()
 
     while queue:
         current = queue.popleft()
